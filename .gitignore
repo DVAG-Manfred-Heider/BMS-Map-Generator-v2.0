@@ -1,1 +1,12 @@
-/build/
+# alles ignorieren
+*
+
+# außer folgende Dateien...
+!.gitignore
+!*.java
+
+# ...even if they are in subdirectories
+!*/
+
+# if the files to be tracked are in subdirectories
+!*/src

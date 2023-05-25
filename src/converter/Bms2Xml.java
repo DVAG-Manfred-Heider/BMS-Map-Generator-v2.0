@@ -20,10 +20,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
-
-
-
-
+import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -183,7 +180,14 @@ public class Bms2Xml {
 								{
 									if (line.charAt(0)!='*')
 									{
-										e = xdoc.createElement(str[2]);
+										try {
+											e = xdoc.createElement(str[2]);	
+										} catch (DOMException c) {
+											System.out.println("str[2]=" + str[2]);
+											c.printStackTrace();
+										}
+										
+										
 										e.setTextContent(str[3]);	
 										dfhmdf.appendChild(e);
 									}
