@@ -778,7 +778,9 @@ public class DFHMDF_UI1  implements WindowListener
 			}
 			if(initialText.getText().equals("")||allBlank(initialText.getText()))
 			{
-				f[3]=false;
+				//Initialtext kann leer sein! Es erfolgt keine Prüfung auf den Inhalt. t13ae34
+				//f[3]=false;
+				f[3]=true;
 				setColor(initialText,f[3]);
 			}
 			else
